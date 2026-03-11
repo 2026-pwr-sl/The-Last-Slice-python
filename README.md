@@ -1,4 +1,4 @@
-# The-Last-Slice-python
+# The-Last-Slice-python-project
 
 ## Group Information
 - Group Name: The Last Slice
