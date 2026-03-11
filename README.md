@@ -1,4 +1,5 @@
 # The-Last-Slice-python
+
 ## Group Information
 - Group Name: The Last Slice
 
@@ -10,5 +11,9 @@
 ## Project Description
 This is our first team project using Python and GitHub.
 
-## How to Run
-Instructions will be added later.
+### Steps to Run:
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/2026-pwr-sl/The-Last-Slice-python.git
+   cd The-Last-Slice-python
