@@ -9,7 +9,8 @@
 - Henriqu3steves
 
 ## Project Description
-This is our first team project using Python and GitHub.
+This is our first team programming project. The goal is to create a simple Python program that displays our team information and demonstrates basic Python functions while learning how to collaborate using GitHub.
+
 
 ### Steps to Run:
 
