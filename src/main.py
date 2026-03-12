@@ -66,3 +66,24 @@ print(format_greeting(team_name))
 print(f"Total team members: {get_team_member_count(team_members)}")
 display_data_organized(team_name, team_members, github_names)
 print(say_hello(team_members))
+
+# FUNCTION ADDED BY (@sayemeen21-blip)
+
+def count_name_lengths(members):
+    """Count and display the length of each team member's name"""
+    print("\n")
+    print("NAME LENGTH ANALYZER")
+    print("Added by: @sayemeen21-blip")
+   
+    
+    total_chars = 0
+    for name in members:
+        length = len(name)
+        total_chars = total_chars + length
+        print(f" {name}: {length} characters")
+    
+    average = total_chars / len(members)
+    print(f" Total characters: {total_chars}")
+    print(f" Average name length: {average:.1f} characters")
+    
+print(count_name_lengths(team_members))
