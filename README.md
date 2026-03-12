@@ -9,17 +9,7 @@
 - Henriqu3steves
 
 ## 🎯 Project Description
-The Last Slice Python Project is a collaborative team programming project that demonstrates practical Python applications while serving as a learning platform for Git collaboration workflows.
-
-This project transforms a simple team information display into an interactive program featuring:
-
-Multi-language greetings
-
-Name analysis
-
-Sorting algorithm demonstrations
-
-GitHub profile tracking
+This is our first team programming project. The goal is to create a simple Python program that displays our team information and demonstrates basic Python functions while learning how to collaborate using GitHub.
 
 "Three developers, one repository, countless lessons in collaboration."
 
@@ -41,7 +31,7 @@ GitHub profile tracking
 
 # 👥 Team Contributions:
 ## Henrique Esteves (@Henriqu3steves)
-Responsibilities: Wrote the first Python program and created 3 custom functions including the interactive greeting function, and performed 2 simple tests
+Responsibilities: Wrote the first Python program and created 3 custom functions including the interactive greeting function, and performed tests.
 
 Problems Encountered: Faced challenges with the logic of the greeting function as it was more complex than expected, requiring careful handling of user input and error cases
 
@@ -49,7 +39,7 @@ What I Learned: Discovered that GitHub has more dimensions and uses than I previ
 
 
 ## Ummay Sayemeen (@sayemeen21-blip)
-Responsibilities: Set up the repository structure, created initial README, configured Python environment, added count_name_lengths function to analyze team member names, and updated README with team contributions summary
+Responsibilities: Set up the repository structure, added team members, created .giignore file, created initial README, added count_name_lengths function to analyze team member names, and updated README with team contributions summary.
 
 Problems Encountered: Faced Python installation issues blocked by system policy, resolved merge conflicts manually, accidentally merged own PR without review (learned to never do that!), and had to navigate duplicate folder structures
 
