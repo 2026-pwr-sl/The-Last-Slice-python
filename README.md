@@ -39,7 +39,7 @@ GitHub profile tracking
    cd The-Last-Slice-python
    cd src
 
-### 👥 Team Contributions
+# 👥 Team Contributions
 Henrique Esteves (@Henriqu3steves)
 Responsibilities: Wrote the first Python program and created 3 custom functions including the interactive greeting function, and performed 2 simple tests
 
