@@ -1,5 +1,7 @@
 """Team-related data operations and formatting."""
 
+import json
+
 from utils import choose_from_list
 
 GREETINGS = [
@@ -13,6 +15,60 @@ GREETINGS = [
     "Bonjour",
     "Ciao",
 ]
+
+
+def load_team_data(file_path):
+    """Load team data from a JSON file."""
+    with open(file_path, "r", encoding="utf-8") as file:
+        return json.load(file)
+
+
+def save_team_data(file_path, team_data):
+    """Persist team data to a JSON file."""
+    with open(file_path, "w", encoding="utf-8") as file:
+        json.dump(team_data, file, indent=2)
+
+
+def add_member(members, name, github_username):
+    """Add a member dictionary to the list if it does not already exist."""
+    for member in members:
+        same_name = member["name"].strip().lower() == name.strip().lower()
+        same_github = (
+            member["github_username"].strip().lower()
+            == github_username.strip().lower()
+        )
+        if same_name or same_github:
+            return False, "Member already exists (name or GitHub username)."
+
+    members.append(
+        {
+            "name": name.strip(),
+            "github_username": github_username.strip(),
+        }
+    )
+    return True, "Member added successfully."
+
+
+def search_member(members, search_term):
+    """Return members that match by name or GitHub username."""
+    normalized_term = search_term.strip().lower()
+    return [
+        member
+        for member in members
+        if normalized_term in member["name"].lower()
+        or normalized_term in member["github_username"].lower()
+    ]
+
+
+def display_member_list(members):
+    """Print a numbered list of member dictionaries."""
+    if not members:
+        print("No team members to display.")
+        return
+
+    print("\nTeam Member List:")
+    for index, member in enumerate(members, start=1):
+        print(f"{index}. {member['name']} ({member['github_username']})")
 
 
 def get_team_member_count(members):
