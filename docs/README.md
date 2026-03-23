@@ -27,35 +27,6 @@ python src/main.py --search-member "John"
 
 # Get member count
 python src/main.py --count
-# 
-
-# \## Examples
-
-# 
-
-# ```bash
-
-# \# Show all team members
-
-# python src/main.py --show-team
-
-# 
-
-# \# Add a new member
-
-# python src/main.py --add-member "John Doe" "johndoe"
-
-# 
-
-# \# Search for a member
-
-# python src/main.py --search-member "John"
-
-# 
-
-# \# Get member count
-
-# python src/main.py --count
 
 # ```
 
