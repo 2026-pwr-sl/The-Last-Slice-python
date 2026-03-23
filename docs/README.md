@@ -27,12 +27,9 @@ python src/main.py --search-member "John"
 
 # Get member count
 python src/main.py --count
+```
 
-# ```
-
-# 
-
-# \## Running Tests
+## Running Tests
 
 # 
 
