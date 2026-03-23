@@ -1,31 +1,32 @@
-# \# The Last Slice - Team Management Tool
+# The Last Slice - Team Management Tool
 
-# 
+A Python-based CLI tool for managing team members with JSON data storage.
 
-# A Python-based CLI tool for managing team members with JSON data storage.
+## CLI Usage
 
-# 
+| Command | Description |
+|---------|-------------|
+| `--show-team` | Display all team members |
+| `--display-list` | Show numbered list of members |
+| `--count` | Show total number of members |
+| `--add-member NAME GITHUB` | Add a new team member |
+| `--search-member QUERY` | Search for a member |
+| `--greet NAME` | Greet a team member |
 
-# \## CLI Usage
+## Examples
 
-# 
+```bash
+# Show all team members
+python src/main.py --show-team
 
-# | Command | Description |
+# Add a new member
+python src/main.py --add-member "John Doe" "johndoe"
 
-# |---------|-------------|
+# Search for a member
+python src/main.py --search-member "John"
 
-# | `--show-team` | Display all team members |
-
-# | `--display-list` | Show numbered list of members |
-
-# | `--count` | Show total number of members |
-
-# | `--add-member NAME GITHUB` | Add a new team member |
-
-# | `--search-member QUERY` | Search for a member |
-
-# | `--greet NAME` | Greet a team member |
-
+# Get member count
+python src/main.py --count
 # 
 
 # \## Examples
