@@ -44,22 +44,13 @@ pytest tests/ -v
 ```text
 
 The-Last-Slice-python/
-
 ├── src/
-
 │   ├── main.py
-
 │   ├── team.py
-
 │   └── utils.py
-
 ├── data/
-
-│   └── team\_data.json
-
+│   └── team_data.json
 └── tests/
-
-&#x20;   └── test\_functions.py
-
-# ```
+    └── test_functions.py
+```
 
