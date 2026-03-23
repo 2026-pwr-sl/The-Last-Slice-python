@@ -31,21 +31,17 @@ python src/main.py --count
 
 ## Running Tests
 
-# 
-
-# ```bash
+```bash
 
 # pip install pytest
 
 # pytest tests/ -v
 
-# ```
+```
 
-# \## Project Structure
+## Project Structure
 
-# 
-
-# ```text
+```text
 
 # The-Last-Slice-python/
 
