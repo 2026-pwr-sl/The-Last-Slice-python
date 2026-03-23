@@ -6,7 +6,7 @@ A Python-based CLI tool for managing team members with JSON data storage.
 
 | Command | Description |
 |---------|-------------|
-| `--show-team` | Display all team members |
+| `` `--show-team` `` | Display all team members |
 | `--display-list` | Show numbered list of members |
 | `--count` | Show total number of members |
 | `--add-member NAME GITHUB` | Add a new team member |
