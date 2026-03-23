@@ -1,0 +1,30 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  basic-checks:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Check Python syntax
+      run: python -m py_compile src/*.py
+    
+    - name: Test CLI help
+      run: python src/main.py --help
+    
+    - name: Test basic commands
+      run: |
+        python src/main.py --count
+        python src/main.py --show-team
