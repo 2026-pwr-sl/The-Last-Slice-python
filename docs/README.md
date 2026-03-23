@@ -33,9 +33,9 @@ python src/main.py --count
 
 ```bash
 
-# pip install pytest
+pip install pytest
 
-# pytest tests/ -v
+pytest tests/ -v
 
 ```
 
@@ -43,23 +43,23 @@ python src/main.py --count
 
 ```text
 
-# The-Last-Slice-python/
+The-Last-Slice-python/
 
-# ├── src/
+├── src/
 
-# │   ├── main.py
+│   ├── main.py
 
-# │   ├── team.py
+│   ├── team.py
 
-# │   └── utils.py
+│   └── utils.py
 
-# ├── data/
+├── data/
 
-# │   └── team\_data.json
+│   └── team\_data.json
 
-# └── tests/
+└── tests/
 
-# &#x20;   └── test\_functions.py
+&#x20;   └── test\_functions.py
 
 # ```
 
