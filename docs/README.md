@@ -1,6 +1,6 @@
 # The Last Slice - Team Management Tool
 
-A Python-based CLI tool for managing team members with JSON data storage.
+A Python-based CLI tool for managing team members with JSON data storage, interactive greetings, name analysis, sorting algorithms, and CSV export.
 
 ## CLI Usage
 
@@ -67,6 +67,9 @@ The-Last-Slice-python/
 └── tests/
     └── test_functions.py
     └── test_team.py
+└── .gitignore
+└── README.md
+└── requirements.txt
 ```
 
 ## Modules
@@ -83,8 +86,6 @@ This module handles user input, parses command-line arguments, and orchestrates 
 |----------|-------------|
 | `parse_args()` | Configures and returns command-line argument parser using argparse |
 | `main()` | Main program controller - loads data, processes arguments, calls team functions |
-
-**Related Tasks:** Task 2 (CLI Arguments), Task 1 (Refactoring)
 
 ---
 
