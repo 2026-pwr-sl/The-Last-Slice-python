@@ -63,10 +63,10 @@ The-Last-Slice-python/
 │   ├── team.py
 │   └── utils.py
 └── tests/
-    └── test_functions.py
-    └── test_team.py
-└── .gitignore
-└── README.md
+│   ├── test_functions.py
+│   └── test_team.py
+├── .gitignore
+├── README.md
 └── requirements.txt
 ```
 
