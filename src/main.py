@@ -20,9 +20,16 @@ DATA_FILE_PATH = os.path.abspath(
 )
 
 
+class SafeArgumentParser(argparse.ArgumentParser):
+    """ArgumentParser that raises a friendly ValueError instead of exiting."""
+
+    def error(self, message):
+        raise ValueError(message)
+
+
 def parse_args():
     """Parse command-line options for the CLI script."""
-    parser = argparse.ArgumentParser(
+    parser = SafeArgumentParser(
         description="Team utility CLI for The Last Slice.",
     )
     parser.add_argument(
@@ -66,65 +73,91 @@ def parse_args():
     return parser.parse_args()
 
 
+def validate_text_argument(value, flag_name):
+    """Validate free-text CLI values and raise clear errors for invalid input."""
+    if value is None:
+        return
+
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{flag_name} requires a non-empty value.")
+
+
 def main():
-    args = parse_args()
-    team_data = load_team_data(DATA_FILE_PATH)
-    team_name = team_data["team_name"]
-    members = team_data["members"]
-    team_members = [member["name"] for member in members]
-    github_usernames = [member["github_username"] for member in members]
+    try:
+        args = parse_args()
 
-    if args.export_csv:
-        success, message = export_to_csv(members, args.export_csv)
-        print(message)
-        return
+        validate_text_argument(args.greet, "--greet")
+        validate_text_argument(args.search_member, "--search-member")
 
-    if args.add_member:
-        name, github_username = args.add_member
-        added, message = add_member(members, name, github_username)
-        print(message)
-        if added:
-            save_team_data(DATA_FILE_PATH, team_data)
+        team_data = load_team_data(DATA_FILE_PATH)
+        team_name = team_data["team_name"]
+        members = team_data["members"]
+        team_members = [member["name"] for member in members]
+        github_usernames = [member["github_username"] for member in members]
 
-    if args.search_member:
-        results = search_member(members, args.search_member)
-        if results:
-            display_member_list(results)
-        else:
-            print("No matching member found.")
+        if args.export_csv:
+            success, message = export_to_csv(members, args.export_csv)
+            print(message)
+            return 0 if success else 1
 
-    if (
-        args.show_team
-        or args.display_list
-        or args.count
-        or args.greet
-        or args.add_member
-        or args.search_member
-    ):
-        if args.show_team:
-            display_team_summary(team_name, team_members, github_usernames)
+        if args.add_member:
+            name, github_username = args.add_member
+            added, message = add_member(members, name, github_username)
+            print(message)
+            if added:
+                save_team_data(DATA_FILE_PATH, team_data)
 
-        if args.display_list:
-            display_member_list(members)
+        if args.search_member:
+            results = search_member(members, args.search_member)
+            if results:
+                display_member_list(results)
+            else:
+                print("No matching member found.")
 
-        if args.count:
-            print(get_team_member_count(members))
+        if (
+            args.show_team
+            or args.display_list
+            or args.count
+            or args.greet
+            or args.add_member
+            or args.search_member
+        ):
+            if args.show_team:
+                display_team_summary(team_name, team_members, github_usernames)
 
-        if args.greet:
-            print(f"Hello, {args.greet}!")
+            if args.display_list:
+                display_member_list(members)
 
-        return
+            if args.count:
+                print(get_team_member_count(members))
 
-    print()
-    print("Project check: The project runs correctly.")
+            if args.greet:
+                print(f"Hello, {args.greet}!")
 
-    print("\nCustom functions section:")
-    print(format_greeting(team_name))
-    print(f"Total team members: {get_team_member_count(members)}")
-    display_team_summary(team_name, team_members, github_usernames)
-    print(say_hello(team_members))
-    count_name_lengths(team_members)
+            return 0
+
+        print()
+        print("Project check: The project runs correctly.")
+
+        print("\nCustom functions section:")
+        print(format_greeting(team_name))
+        print(f"Total team members: {get_team_member_count(members)}")
+        display_team_summary(team_name, team_members, github_usernames)
+        print(say_hello(team_members))
+        count_name_lengths(team_members)
+        return 0
+
+    except ValueError as error:
+        print(f"Error: {error}")
+        print("Run with --help to see valid usage.")
+        return 1
+    except KeyboardInterrupt:
+        print("\nOperation cancelled by user.")
+        return 1
+    except Exception as error:
+        print(f"Unexpected error: {error}")
+        return 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
