@@ -128,3 +128,21 @@ def count_name_lengths(members):
     average_length = total_characters / len(members)
     print(f" Total characters: {total_characters}")
     print(f" Average name length: {average_length:.1f} characters")
+
+def export_to_csv(members, filename="team_export.csv"):
+    """Export team members to CSV file"""
+    import csv
+    
+    try:
+        with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
+            fieldnames = ['name', 'github_username']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            for member in members:
+                writer.writerow({
+                    'name': member['name'],
+                    'github_username': member['github_username']
+                })
+        return True, f"✅ Successfully exported {len(members)} members to '{filename}'"
+    except Exception as e:
+        return False, f"❌ Export failed: {e}"
