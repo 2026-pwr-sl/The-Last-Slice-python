@@ -2,7 +2,7 @@
 
 import json
 
-from utils import choose_from_list
+from src.utils import choose_from_list
 
 GREETINGS = [
     "Hello",
