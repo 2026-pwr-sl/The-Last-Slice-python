@@ -1,4 +1,5 @@
 import argparse
+import json
 import os
 
 from team import (
@@ -59,58 +60,105 @@ def parse_args():
 
 
 def main():
-    args = parse_args()
-    team_data = load_team_data(DATA_FILE_PATH)
-    team_name = team_data["team_name"]
-    members = team_data["members"]
-    team_members = [member["name"] for member in members]
-    github_usernames = [member["github_username"] for member in members]
+    try:
+        args = parse_args()
+        
+        # Load team data with error handling
+        try:
+            team_data = load_team_data(DATA_FILE_PATH)
+        except FileNotFoundError as e:
+            print(f"\n{str(e)}\nPlease ensure the data file exists at: {DATA_FILE_PATH}")
+            return
+        except (IOError, ValueError) as e:
+            print(f"\n{str(e)}\nUnable to load team data. Please check the file format.")
+            return
+        except json.JSONDecodeError as e:
+            print(f"\n{str(e)}\nThe data file contains invalid JSON. Please fix the file format.")
+            return
+        
+        # Validate team data structure
+        if not isinstance(team_data, dict) or "team_name" not in team_data or "members" not in team_data:
+            print("\nError: Invalid team data structure. Expected 'team_name' and 'members' fields.")
+            return
+        
+        team_name = team_data["team_name"]
+        members = team_data["members"]
+        
+        if not isinstance(members, list):
+            print("\nError: 'members' must be a list.")
+            return
+        
+        team_members = [member.get("name", "Unknown") for member in members if isinstance(member, dict)]
+        github_usernames = [member.get("github_username", "Unknown") for member in members if isinstance(member, dict)]
+        
+        # Handle individual commands
+        if args.add_member:
+            name, github_username = args.add_member
+            added, message = add_member(members, name, github_username)
+            print(message)
+            if added:
+                try:
+                    save_team_data(DATA_FILE_PATH, team_data)
+                except (IOError, TypeError) as e:
+                    print(f"Warning: Member was added but could not save: {str(e)}")
 
-    if args.add_member:
-        name, github_username = args.add_member
-        added, message = add_member(members, name, github_username)
-        print(message)
-        if added:
-            save_team_data(DATA_FILE_PATH, team_data)
+        if args.search_member:
+            results = search_member(members, args.search_member)
+            if results:
+                display_member_list(results)
+            else:
+                print("\nNo matching member found.")
 
-    if args.search_member:
-        results = search_member(members, args.search_member)
-        if results:
-            display_member_list(results)
-        else:
-            print("No matching member found.")
+        if (
+            args.show_team
+            or args.display_list
+            or args.count
+            or args.greet
+            or args.add_member
+            or args.search_member
+        ):
+            if args.show_team:
+                display_team_summary(team_name, team_members, github_usernames)
 
-    if (
-        args.show_team
-        or args.display_list
-        or args.count
-        or args.greet
-        or args.add_member
-        or args.search_member
-    ):
-        if args.show_team:
-            display_team_summary(team_name, team_members, github_usernames)
+            if args.display_list:
+                display_member_list(members)
 
-        if args.display_list:
-            display_member_list(members)
+            if args.count:
+                member_count = get_team_member_count(members)
+                print(f"Total team members: {member_count}")
 
-        if args.count:
-            print(get_team_member_count(members))
+            if args.greet:
+                if args.greet.strip():
+                    print(f"Hello, {args.greet}!")
+                else:
+                    print("Error: Greeting name cannot be empty.")
 
-        if args.greet:
-            print(f"Hello, {args.greet}!")
+            return
 
-        return
+        print()
+        print("Project check: The project runs correctly.")
 
-    print()
-    print("Project check: The project runs correctly.")
-
-    print("\nCustom functions section:")
-    print(format_greeting(team_name))
-    print(f"Total team members: {get_team_member_count(members)}")
-    display_team_summary(team_name, team_members, github_usernames)
-    print(say_hello(team_members))
-    count_name_lengths(team_members)
+        print("\nCustom functions section:")
+        print(format_greeting(team_name))
+        print(f"Total team members: {get_team_member_count(members)}")
+        display_team_summary(team_name, team_members, github_usernames)
+        
+        try:
+            greeting_result = say_hello(team_members)
+            print(greeting_result)
+        except Exception as e:
+            print(f"Error during greeting selection: {str(e)}")
+        
+        try:
+            count_name_lengths(team_members)
+        except Exception as e:
+            print(f"Error calculating name statistics: {str(e)}")
+    
+    except KeyboardInterrupt:
+        print("\n\nProgram interrupted by user.")
+    except Exception as e:
+        print(f"\nUnexpected error: {str(e)}")
+        print("Please check your input and try again.")
 
 
 if __name__ == "__main__":
