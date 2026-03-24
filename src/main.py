@@ -59,26 +59,52 @@ def parse_args():
 
 
 def main():
-    args = parse_args()
-    team_data = load_team_data(DATA_FILE_PATH)
-    team_name = team_data["team_name"]
-    members = team_data["members"]
-    team_members = [member["name"] for member in members]
-    github_usernames = [member["github_username"] for member in members]
+    """Main entry point for the CLI application."""
+    try:
+        args = parse_args()
+    except SystemExit:
+        # argparse calls sys.exit() on error, which is expected behavior
+        return
+    
+    # Load team data with error handling
+    team_data, load_error = load_team_data(DATA_FILE_PATH)
+    if team_data is None:
+        print(load_error)
+        return
+    
+    try:
+        team_name = team_data["team_name"]
+        members = team_data["members"]
+        team_members = [member["name"] for member in members]
+        github_usernames = [member["github_username"] for member in members]
+    except (KeyError, TypeError, AttributeError) as e:
+        print(f"Error: Unable to process team data. Details: {str(e)}")
+        return
 
     if args.add_member:
-        name, github_username = args.add_member
-        added, message = add_member(members, name, github_username)
-        print(message)
-        if added:
-            save_team_data(DATA_FILE_PATH, team_data)
+        try:
+            name, github_username = args.add_member
+            added, message = add_member(members, name, github_username)
+            print(message)
+            if added:
+                success, save_message = save_team_data(DATA_FILE_PATH, team_data)
+                if not success:
+                    print(save_message)
+        except Exception as e:
+            print(f"Error: Failed to add member. Details: {str(e)}")
 
     if args.search_member:
-        results = search_member(members, args.search_member)
-        if results:
-            display_member_list(results)
-        else:
-            print("No matching member found.")
+        try:
+            results = search_member(members, args.search_member)
+            if results:
+                display_member_list(results)
+            else:
+                if args.search_member.strip():
+                    print("No matching member found.")
+                else:
+                    print("Error: Search term cannot be empty.")
+        except Exception as e:
+            print(f"Error: Search failed. Details: {str(e)}")
 
     if (
         args.show_team
@@ -88,29 +114,38 @@ def main():
         or args.add_member
         or args.search_member
     ):
-        if args.show_team:
-            display_team_summary(team_name, team_members, github_usernames)
+        try:
+            if args.show_team:
+                display_team_summary(team_name, team_members, github_usernames)
 
-        if args.display_list:
-            display_member_list(members)
+            if args.display_list:
+                display_member_list(members)
 
-        if args.count:
-            print(get_team_member_count(members))
+            if args.count:
+                print(get_team_member_count(members))
 
-        if args.greet:
-            print(f"Hello, {args.greet}!")
-
+            if args.greet:
+                if not args.greet.strip():
+                    print("Error: Name cannot be empty.")
+                else:
+                    print(f"Hello, {args.greet}!")
+        except Exception as e:
+            print(f"Error: Failed to execute command. Details: {str(e)}")
         return
 
-    print()
-    print("Project check: The project runs correctly.")
+    # Default behavior
+    try:
+        print()
+        print("Project check: The project runs correctly.")
 
-    print("\nCustom functions section:")
-    print(format_greeting(team_name))
-    print(f"Total team members: {get_team_member_count(members)}")
-    display_team_summary(team_name, team_members, github_usernames)
-    print(say_hello(team_members))
-    count_name_lengths(team_members)
+        print("\nCustom functions section:")
+        print(format_greeting(team_name))
+        print(f"Total team members: {get_team_member_count(members)}")
+        display_team_summary(team_name, team_members, github_usernames)
+        print(say_hello(team_members))
+        count_name_lengths(team_members)
+    except Exception as e:
+        print(f"Error: An unexpected error occurred. Details: {str(e)}")
 
 
 if __name__ == "__main__":
