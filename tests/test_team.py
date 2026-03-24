@@ -1,8 +1,8 @@
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 
-from src.team import add_member, search_member, get_team_member_count, format_greeting
+from team import add_member, search_member, get_team_member_count, format_greeting
 
 def test_add_member_success():
     members = []
