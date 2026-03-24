@@ -62,8 +62,6 @@ The-Last-Slice-python/
 │   ├── sorting_functions.py
 │   ├── team.py
 │   └── utils.py
-├── data/
-│   └── team_data.json
 └── tests/
     └── test_functions.py
     └── test_team.py
