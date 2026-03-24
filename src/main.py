@@ -6,6 +6,7 @@ from team import (
     count_name_lengths,
     display_member_list,
     display_team_summary,
+    export_to_csv,
     format_greeting,
     get_team_member_count,
     load_team_data,
@@ -55,6 +56,13 @@ def parse_args():
         metavar="NAME",
         help="Print a greeting to the provided name.",
     )
+    parser.add_argument(
+        "--export-csv",
+        metavar="FILENAME",
+        nargs="?",
+        const="team_export.csv",
+        help="Export team members to CSV file. Optional filename (default: team_export.csv)",
+    )
     return parser.parse_args()
 
 
@@ -65,6 +73,11 @@ def main():
     members = team_data["members"]
     team_members = [member["name"] for member in members]
     github_usernames = [member["github_username"] for member in members]
+
+    if args.export_csv:
+        success, message = export_to_csv(members, args.export_csv)
+        print(message)
+        return
 
     if args.add_member:
         name, github_username = args.add_member
