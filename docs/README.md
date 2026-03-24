@@ -62,11 +62,11 @@ The-Last-Slice-python/
 │   ├── sorting_functions.py
 │   ├── team.py
 │   └── utils.py
-└── tests/
-    └── test_functions.py
-    └── test_team.py
-└── .gitignore
-└── README.md
+├── tests/
+│   ├── test_functions.py
+│   └── test_team.py
+├── .gitignore
+├── README.md
 └── requirements.txt
 ```
 
