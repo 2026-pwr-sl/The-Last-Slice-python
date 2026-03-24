@@ -34,8 +34,7 @@ def add_member(members, name, github_username):
     for member in members:
         same_name = member["name"].strip().lower() == name.strip().lower()
         same_github = (
-            member["github_username"].strip().lower()
-            == github_username.strip().lower()
+            member["github_username"].strip().lower() == github_username.strip().lower()
         )
         if same_name or same_github:
             return False, "Member already exists (name or GitHub username)."
