@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Lab2",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/lab2.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": true,
+            "args": ["<", "log.txt"]
+        }
+    ]
+}
