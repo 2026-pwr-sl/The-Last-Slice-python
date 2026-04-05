@@ -27,7 +27,6 @@ This is our first team programming project. The goal is to create a simple Pytho
    ```bash
    git clone https://github.com/2026-pwr-sl/The-Last-Slice-python.git
    cd The-Last-Slice-python
-   cd src
    ````
 
 # Lab02 - Standard Input and Output
