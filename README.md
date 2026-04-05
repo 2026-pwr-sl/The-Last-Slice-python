@@ -28,6 +28,21 @@ This is our first team programming project. The goal is to create a simple Pytho
    git clone https://github.com/2026-pwr-sl/The-Last-Slice-python.git
    cd The-Last-Slice-python
    cd src
+   ````
+
+   # Lab02 - Standard Input and Output
+
+## Logging Library Documentation
+
+- [Logging Library Documentation](https://docs.python.org/3/library/logging.html)
+- [Logging Tutorial](https://docs.python.org/3/howto/logging.html)
+- [Logging Cookbook](https://docs.python.org/3/howto/logging-cookbook.html)
+
+## How to Run
+
+```bash
+python lab2.py < log.txt
+````
 
 # 👥 Team Contributions:
 ## Henrique Esteves (@Henriqu3steves)
