@@ -44,6 +44,7 @@ This is our first team programming project. The goal is to create a simple Pytho
 python lab2.py < log.txt
 ````
 
+
 # 👥 Team Contributions:
 ## Henrique Esteves (@Henriqu3steves)
 Responsibilities: Wrote the first Python program and created 3 custom functions including the interactive greeting function, and performed tests.
