@@ -30,7 +30,7 @@ This is our first team programming project. The goal is to create a simple Pytho
    cd src
    ````
 
-   # Lab02 - Standard Input and Output
+# Lab02 - Standard Input and Output
 
 ## Logging Library Documentation
 
