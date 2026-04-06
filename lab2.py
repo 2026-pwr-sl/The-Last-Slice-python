@@ -20,7 +20,7 @@ def parse_log_line(line):
         'processing_time': int(parts[3])
     }
 
-def main():
+def run():
     logging.info("Start - Processing log file from standard input")
     
     # Read all lines from standard input
@@ -91,4 +91,4 @@ def main():
     logging.info("End - Log processing completed successfully")
 
 if __name__ == "__main__":
-    main()
+    run()
