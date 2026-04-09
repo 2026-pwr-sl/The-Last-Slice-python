@@ -30,6 +30,31 @@ def read_log():
     logging.debug(f"Parsed {len(entries)} non-empty log entrie(s) into the list.")
     return entries
 
+def successful_reads(entries):
+    result = [e for e in entries if 200 <= e[1] < 300]
+    logging.info(f"Successful entries: {len(result)}")
+    return result
+
+def failed_reads(entries):
+    errors_4xx = [e for e in entries if 400 <= e[1] < 500]
+    errors_5xx = [e for e in entries if 500 <= e[1] < 600]
+
+    logging.info(f"4xx errors: {len(errors_4xx)}")
+    logging.info(f"5xx errors: {len(errors_5xx)}")
+
+    return errors_4xx + errors_5xx
+
+def html_entries(entries):
+    return [
+        e for e in entries
+        if 200 <= e[1] < 300 and e[0].endswith(".html")
+    ]
+
+def print_html_entries(entries):
+    htmls = html_entries(entries)
+    for e in htmls:
+        print(e)
+
 def run():
     logging.info("Start - Processing log file from standard input")
     entries = read_log()
@@ -81,6 +106,13 @@ def run():
     print(f"Total bytes sent: {total_bytes} B")
     print(f"Total kilobytes sent: {total_kilobytes:.2f} KB")
     print(f"Average processing time: {avg_processing_time:.2f} ms")
+
+    successful = successful_reads(entries)
+    failed = failed_reads(entries)
+    print(f"Successful entries: {len(successful)}")
+    print(f"Failed entries: {len(failed)}")
+    print_html_entries(entries)
+
     
     logging.info("End - Log processing completed successfully")
 
