@@ -8,7 +8,7 @@
 - kozak1715
 - Henriqu3steves
 
-## 🎯 Project Description
+## Project Description
 This is our first team programming project. The goal is to create a simple Python program that displays our team information and demonstrates basic Python functions while learning how to collaborate using GitHub.
 
 "Three developers, one repository, countless lessons in collaboration."
@@ -37,6 +37,14 @@ This is our first team programming project. The goal is to create a simple Pytho
 - [Logging Tutorial](https://docs.python.org/3/howto/logging.html)
 - [Logging Cookbook](https://docs.python.org/3/howto/logging-cookbook.html)
 
+## Python Documentation Studied for Lab02.py
+
+- [str.split()](https://docs.python.org/3/library/stdtypes.html#str.split)
+- [ipaddress module](https://docs.python.org/3/library/ipaddress.html)
+- [ipaddress.IPv4Address](https://docs.python.org/3/library/ipaddress.html#ipaddress.IPv4Address)
+- [ipaddress.IPv4Network](https://docs.python.org/3/library/ipaddress.html#ipaddress.IPv4Network)
+- [datetime module and datetime class](https://docs.python.org/3/library/datetime.html)
+
 ## How to Run
 
 ```bash
@@ -44,7 +52,7 @@ python lab2.py < log.txt
 ````
 
 
-# 👥 Team Contributions:
+# Team Contributions:
 ## Henrique Esteves (@Henriqu3steves)
 Responsibilities: Wrote the first Python program and created 3 custom functions including the interactive greeting function, and performed tests.
 
@@ -70,7 +78,7 @@ What I Learned: Learned to work effectively with branches, create and test Pytho
 
 
 
-### 🌟 Thank you for visiting our project! 🌟
-Created with ❤️ by Team The Last Slice
+### Thank you for visiting our project! 🌟
+Created by Team The Last Slice
 
 12 March 2026
