@@ -99,7 +99,7 @@ def display_requests_in_time_range(entries, start_time, end_time):
 
 
 if __name__ == "__main__":
-    entries = read_log_file("log.txt")
+    entries = read_log_file("logfile.txt")
 
     print("Loaded entries:", len(entries))
 
