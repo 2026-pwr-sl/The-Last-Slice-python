@@ -49,3 +49,37 @@ def test_reqstr2obj_raises_value_error_for_invalid_resource_path():
 def test_reqstr2obj_raises_value_error_for_invalid_protocol_prefix():
     with pytest.raises(ValueError):
         reqstr2obj("GET /index.html HTTPS/1.1")
+
+def test_4_multiple_valid_requests():
+    cases = [
+        ("GET / HTTP1.1", ("GET", "/", "HTTP1.1")),
+        ("POST /form HTTP1.0", ("POST", "/form", "HTTP1.0")),
+        ("DELETE /item HTTP2.0", ("DELETE", "/item", "HTTP2.0")),
+    ]
+
+    for req, expected in cases:
+        result = reqstr2obj(req)
+        assert (result.request_type, result.resource_path, result.protocol_type) == expected
+
+
+##def test_5_returns_none_for_invalid_parts():
+    ##assert reqstr2obj("GET /index.html") is None
+
+
+def test_6_bad_request_type():
+    from paper7_lab10 import BadRequestTypeError
+
+    with pytest.raises(BadRequestTypeError):
+        reqstr2obj("DOWNLOAD /movie.mp4 HTTP1.1")
+
+
+def test_7_bad_http_version():
+    from paper7_lab10 import BadHTTPVersion
+
+    with pytest.raises(BadHTTPVersion):
+        reqstr2obj("GET /index.html HTTP3.0")
+
+
+def test_8_path_error_message():
+    with pytest.raises(ValueError, match="Path must start with /"):
+        reqstr2obj("GET index.html HTTP1.1")
