@@ -1,0 +1,8 @@
+{
+  "log_filename": "logfile.txt",
+  "ip_address_filter": "",
+  "request_method": "GET",
+  "logging_level": "INFO",
+  "display_lines": 10,
+  "minimum_status_code": 0
+}

@@ -83,3 +83,12 @@ def test_7_bad_http_version():
 def test_8_path_error_message():
     with pytest.raises(ValueError, match="Path must start with /"):
         reqstr2obj("GET index.html HTTP1.1")
+
+
+if __name__ == "__main__":
+    exit_code = pytest.main([__file__, "-v"])
+    if exit_code == 0:
+        print("\n✓ All tests passed!")
+    else:
+        print("\n✗ Some tests failed!")
+    sys.exit(exit_code)
