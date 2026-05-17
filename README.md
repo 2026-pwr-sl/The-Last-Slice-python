@@ -2,7 +2,7 @@
 
 
 ## Group Information
-- Group Name: The Last Slice
+- Group Name: **The Last Slice**
 
 ## Team Members
 - sayemeen21-blip
@@ -37,7 +37,6 @@ This is our first team programming project. The goal is to create a simple Pytho
    ````
 
    
-
 ## Lab02 - Standard Input and Output
 
 ### Logging Library Documentation
@@ -61,12 +60,10 @@ python lab2.py < log.txt
 ````
 
 
-
 ## Lab07 - Regular Expressions
 
 ### pycodestyle output
     No errors or warnings found.
-
 
 
 
