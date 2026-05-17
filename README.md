@@ -28,6 +28,15 @@ This is our first team programming project. The goal is to create a simple Pytho
    git clone https://github.com/2026-pwr-sl/The-Last-Slice-python.git
    cd The-Last-Slice-python
    ````
+2. **Run the program**
+   ```bash
+   python src\main.py
+   ````
+3. **Test**
+   ```bash
+   pytest
+   ````
+   
 
 # Lab02 - Standard Input and Output
 
