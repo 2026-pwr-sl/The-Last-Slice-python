@@ -1,5 +1,6 @@
 # The-Last-Slice-python
 
+
 ## Group Information
 - Group Name: The Last Slice
 
@@ -15,9 +16,7 @@ This is our first team programming project. The goal is to create a simple Pytho
 
 ## Prerequisites
     Python 3.x installed (Download Python)
-
     Git installed (Download Git)
-
     GitHub account
 
 
@@ -59,6 +58,7 @@ This is our first team programming project. The goal is to create a simple Pytho
 ```bash
 python lab2.py < log.txt
 ````
+
 
 ## Lab07 - Regular Expressions
 
