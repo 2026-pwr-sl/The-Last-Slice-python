@@ -45,17 +45,16 @@ This is our first team programming project. The goal is to create a simple Pytho
 - [ipaddress.IPv4Network](https://docs.python.org/3/library/ipaddress.html#ipaddress.IPv4Network)
 - [datetime module and datetime class](https://docs.python.org/3/library/datetime.html)
 
-# Lab07 - Regular Expressions
-
-## pycodestyle output
-    No errors or warnings found.
-
-
 ## How to Run
 
 ```bash
 python lab2.py < log.txt
 ````
+
+# Lab07 - Regular Expressions
+
+## pycodestyle output
+    No errors or warnings found.
 
 
 # Team Contributions:
