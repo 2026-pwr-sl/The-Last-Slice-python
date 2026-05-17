@@ -35,6 +35,7 @@ This is our first team programming project. The goal is to create a simple Pytho
    ```bash
    python tests/run_all_tests.py
    ````
+
    
 
 ## Lab02 - Standard Input and Output
@@ -60,10 +61,13 @@ python lab2.py < log.txt
 ````
 
 
+
 ## Lab07 - Regular Expressions
 
 ### pycodestyle output
     No errors or warnings found.
+
+
 
 
 ## Team Contributions:
