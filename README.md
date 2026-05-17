@@ -34,7 +34,7 @@ This is our first team programming project. The goal is to create a simple Pytho
    ````
 3. **Test**
    ```bash
-   pytest
+   python tests/run_all_tests.py
    ````
    
 
