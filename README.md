@@ -1,7 +1,8 @@
 # The-Last-Slice-python
 
+
 ## Group Information
-- Group Name: The Last Slice
+- Group Name: **The Last Slice**
 
 ## Team Members
 - sayemeen21-blip
@@ -15,9 +16,7 @@ This is our first team programming project. The goal is to create a simple Pytho
 
 ## Prerequisites
     Python 3.x installed (Download Python)
-
     Git installed (Download Git)
-
     GitHub account
 
 
@@ -28,16 +27,25 @@ This is our first team programming project. The goal is to create a simple Pytho
    git clone https://github.com/2026-pwr-sl/The-Last-Slice-python.git
    cd The-Last-Slice-python
    ````
+2. **Run the program**
+   ```bash
+   python src\main.py
+   ````
+3. **Test**
+   ```bash
+   python tests/run_all_tests.py
+   ````
 
-# Lab02 - Standard Input and Output
+   
+## Lab02 - Standard Input and Output
 
-## Logging Library Documentation
+### Logging Library Documentation
 
 - [Logging Library Documentation](https://docs.python.org/3/library/logging.html)
 - [Logging Tutorial](https://docs.python.org/3/howto/logging.html)
 - [Logging Cookbook](https://docs.python.org/3/howto/logging-cookbook.html)
 
-## Python Documentation Studied for Lab02.py
+### Python Documentation for Lab02.py
 
 - [str.split()](https://docs.python.org/3/library/stdtypes.html#str.split)
 - [ipaddress module](https://docs.python.org/3/library/ipaddress.html)
@@ -45,15 +53,22 @@ This is our first team programming project. The goal is to create a simple Pytho
 - [ipaddress.IPv4Network](https://docs.python.org/3/library/ipaddress.html#ipaddress.IPv4Network)
 - [datetime module and datetime class](https://docs.python.org/3/library/datetime.html)
 
-## How to Run
+### How to Run
 
 ```bash
 python lab2.py < log.txt
 ````
 
 
-# Team Contributions:
-## Henrique Esteves (@Henriqu3steves)
+## Lab07 - Regular Expressions
+
+### pycodestyle output
+    No errors or warnings found.
+
+
+
+## Team Contributions:
+### Henrique Esteves (@Henriqu3steves)
 Responsibilities: Wrote the first Python program and created 3 custom functions including the interactive greeting function, and performed tests.
 
 Problems Encountered: Faced challenges with the logic of the greeting function as it was more complex than expected, requiring careful handling of user input and error cases
@@ -61,7 +76,7 @@ Problems Encountered: Faced challenges with the logic of the greeting function a
 What I Learned: Discovered that GitHub has more dimensions and uses than I previously knew, proving itself as an even more capable tool and accelerator of teamwork. Python showed itself as a simple language to understand and manage, being very good for data manipulation and management.
 
 
-## Ummay Sayemeen (@sayemeen21-blip)
+### Ummay Sayemeen (@sayemeen21-blip)
 Responsibilities: Set up the repository structure, added team members, created .gitignore file, created initial README, added count_name_lengths function to analyze team member names, and updated README with team contributions summary.
 
 Problems Encountered: Faced Python installation issues blocked by system policy, resolved merge conflicts manually, accidentally merged own PR without review (learned to never do that!), and had to navigate duplicate folder structures
@@ -69,7 +84,7 @@ Problems Encountered: Faced Python installation issues blocked by system policy,
 What I Learned: Mastered Git commands (branching, committing, pushing, fetching), learned to resolve merge conflicts, understood the importance of code reviews, and discovered that collaboration makes code better. The biggest lesson: never merge your own PR without team review!
 
 
-## Vitalii Kozak (@kozak1715)
+### Vitalii Kozak (@kozak1715)
 Responsibilities: Divided the work using GitHub Issues, implemented three basic sorting functions (bubble sort, selection sort, insertion sort) in src/sorting_functions.py, and prepared unit tests to verify their behavior
 
 Problems Encountered: Had to pull main.py from the main branch into my feature branch to test the functions properly, and learned to stage, commit, and push changes correctly so they appear on GitHub
@@ -83,7 +98,7 @@ Created by Team The Last Slice
 
 12 March 2026
 
-Paper10_lab08 Task 0 
+### Paper10_lab08 Task 0 
 
 FIDE World Chess Ratings 201K Players
 
@@ -112,7 +127,7 @@ Countries: 204
 Rating range: 1,400 to 2,839
 Snapshot: August 2025 rating list
 
-Paper10_lab08 Task 4
+### Paper10_lab08 Task 4
 
 ## Environment Variables
 
