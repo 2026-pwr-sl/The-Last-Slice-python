@@ -78,7 +78,62 @@ What I Learned: Learned to work effectively with branches, create and test Pytho
 
 
 
-### Thank you for visiting our project! 🌟
+### Thank you for visiting our project! 
 Created by Team The Last Slice
 
 12 March 2026
+
+Paper10_lab08 Task 0 
+
+FIDE World Chess Ratings 201K Players
+
+Dataset URL:
+https://www.kaggle.com/datasets/ibrahimqasimi/fide-world-chess-ratings-201k-players
+
+Description:
+Complete monthly rating list from FIDE (Fédération Internationale des Échecs), the international chess governing body. Contains 201,016 active rated players from 204 countries including world champion Magnus Carlsen, Hikaru Nakamura, Gukesh Dommaraju, and every grandmaster, FIDE master, and rated amateur on Earth. This is the August 2025 list, capturing the post-Carlsen world champion era.
+
+Columns:
+id — Unique FIDE player ID
+name — Player full name
+fed — Federation / country (3-letter code)
+sex — M or F
+title — Highest standard title (GM, IM, FM, CM)
+wtitle — Women's title (WGM, WIM, WFM, WCM)
+otitle / foa — Other / online titles
+rating — Standard Elo rating
+games — Number of rated games played
+k — K-factor (rating volatility)
+bday — Birth year
+
+Key Stats:
+Total players: 201,016
+Countries: 204
+Rating range: 1,400 to 2,839
+Snapshot: August 2025 rating list
+
+Paper10_lab08 Task 4
+
+## Environment Variables
+
+The application uses the following environment variables:
+
+### COUNTRY
+
+Three-letter federation code used to filter players.
+
+Examples:
+- POL
+- USA
+- IND
+
+### MIN_RATING
+
+Minimum rating of players included in the statistical analysis.
+
+Examples:
+- 1800
+- 2000
+- 2500
+
+The statistical operation "average rating" is calculated only for players satisfying both conditions.
