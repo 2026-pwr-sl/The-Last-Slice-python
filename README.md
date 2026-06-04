@@ -89,7 +89,8 @@ Responsibilities: Divided the work using GitHub Issues, implemented three basic 
 
 Problems Encountered: Had to pull main.py from the main branch into my feature branch to test the functions properly, and learned to stage, commit, and push changes correctly so they appear on GitHub
 
-What I Learned: Learned to work effectively with branches, create and test Python functions (including basic sorting algorithms), perform unit testing using assert statements, and use GitHub for commits, pushes, and Pull Requests
+What I Learned: Learned to work effectively with branches, create and test Python functions (including basic sorting algorithms), perform unit testing using assert statements, and use GitHub for commits, pushes, and Pull Requests.
+
 
 
 
@@ -123,9 +124,9 @@ Countries: 204
 Rating range: 1,400 to 2,839
 Snapshot: August 2025 rating list
 
-### Paper10_lab08 Task 4
+## Paper10_lab08 Task 4
 
-## Environment Variables
+### Environment Variables
 
 The application uses the following environment variables:
 
@@ -148,6 +149,7 @@ Examples:
 - 2500
 
 The statistical operation "average rating" is calculated only for players satisfying both conditions.
+
 
 ### Thank you for visiting our project! 
 Created by Team The Last Slice
