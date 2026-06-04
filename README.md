@@ -67,7 +67,7 @@ python lab2.py < log.txt
 
 
 
-## Team Contributions:
+## Team Contributions(Lab01):
 ### Henrique Esteves (@Henriqu3steves)
 Responsibilities: Wrote the first Python program and created 3 custom functions including the interactive greeting function, and performed tests.
 
@@ -93,10 +93,6 @@ What I Learned: Learned to work effectively with branches, create and test Pytho
 
 
 
-### Thank you for visiting our project! 
-Created by Team The Last Slice
-
-12 March 2026
 
 ### Paper10_lab08 Task 0 
 
@@ -152,3 +148,6 @@ Examples:
 - 2500
 
 The statistical operation "average rating" is calculated only for players satisfying both conditions.
+
+### Thank you for visiting our project! 
+Created by Team The Last Slice
