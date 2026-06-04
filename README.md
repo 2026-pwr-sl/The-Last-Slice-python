@@ -100,7 +100,9 @@ What I Learned: Learned to work effectively with branches, create and test Pytho
 FIDE World Chess Ratings 201K Players
 
 Dataset URL:
+```bash
 https://www.kaggle.com/datasets/ibrahimqasimi/fide-world-chess-ratings-201k-players
+````
 
 Description:
 Complete monthly rating list from FIDE (Fédération Internationale des Échecs), the international chess governing body. Contains 201,016 active rated players from 204 countries including world champion Magnus Carlsen, Hikaru Nakamura, Gukesh Dommaraju, and every grandmaster, FIDE master, and rated amateur on Earth. This is the August 2025 list, capturing the post-Carlsen world champion era.
@@ -130,7 +132,7 @@ Snapshot: August 2025 rating list
 
 The application uses the following environment variables:
 
-### COUNTRY
+#### COUNTRY
 
 Three-letter federation code used to filter players.
 
@@ -139,7 +141,7 @@ Examples:
 - USA
 - IND
 
-### MIN_RATING
+#### MIN_RATING
 
 Minimum rating of players included in the statistical analysis.
 
