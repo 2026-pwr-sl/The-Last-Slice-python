@@ -108,19 +108,19 @@ https://www.kaggle.com/datasets/ibrahimqasimi/fide-world-chess-ratings-201k-play
 Complete monthly rating list from FIDE (Fédération Internationale des Échecs), the international chess governing body. Contains 201,016 active rated players from 204 countries including world champion Magnus Carlsen, Hikaru Nakamura, Gukesh Dommaraju, and every grandmaster, FIDE master, and rated amateur on Earth. This is the August 2025 list, capturing the post-Carlsen world champion era.
 
 #### Columns:
-```bash
-id — Unique FIDE player ID
-name — Player full name
-fed — Federation / country (3-letter code)
-sex — M or F
-title — Highest standard title (GM, IM, FM, CM)
-wtitle — Women's title (WGM, WIM, WFM, WCM)
-otitle / foa — Other / online titles
-rating — Standard Elo rating
-games — Number of rated games played
-k — K-factor (rating volatility)
-bday — Birth year
-````
+
+- id — Unique FIDE player ID
+- name — Player full name
+- fed — Federation / country (3-letter code)
+- sex — M or F
+- title — Highest standard title (GM, IM, FM, CM)
+- wtitle — Women's title (WGM, WIM, WFM, WCM)
+- otitle / foa — Other / online titles
+- rating — Standard Elo rating
+- games — Number of rated games played
+- k — K-factor (rating volatility)
+- bday — Birth year
+
 
 #### Key Stats:
 ```bash
