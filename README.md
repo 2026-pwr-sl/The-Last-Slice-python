@@ -79,9 +79,9 @@ What I Learned: Discovered that GitHub has more dimensions and uses than I previ
 ### Ummay Sayemeen (@sayemeen21-blip)
 Responsibilities: Set up the repository structure, added team members, created .gitignore file, created initial README, added count_name_lengths function to analyze team member names, and updated README with team contributions summary.
 
-Problems Encountered: Faced Python installation issues blocked by system policy, resolved merge conflicts manually, accidentally merged own PR without review (learned to never do that!), and had to navigate duplicate folder structures
+Problems Encountered: Faced Python installation issues blocked by system policy, resolved merge conflicts manually, accidentally merged own PR without review (learned to never do that!), and had to navigate duplicate folder structures.
 
-What I Learned: Mastered Git commands (branching, committing, pushing, fetching), learned to resolve merge conflicts, understood the importance of code reviews, and discovered that collaboration makes code better. The biggest lesson: never merge your own PR without team review!
+What I Learned: Mastered Git commands (branching, committing, pushing, fetching), learned to resolve merge conflicts, understood the importance of code reviews, and discovered that collaboration makes code better.
 
 
 ### Vitalii Kozak (@kozak1715)
