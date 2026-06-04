@@ -154,4 +154,4 @@ The statistical operation "average rating" is calculated only for players satisf
 
 
 ### Thank you for visiting our project! 
-Created by Team The Last Slice
+Created by Team "The Last Slice"
