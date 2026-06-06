@@ -81,7 +81,7 @@ Responsibilities: Set up the repository structure, added team members with prope
 
 Problems Encountered: Faced Python installation issues blocked by system policy, resolved merge conflicts manually, accidentally merged own PR without review, and had to navigate and clean up duplicate folder structures from team branches.
 
-What I Learned: Mastered advanced Git commands (branching, committing, pushing, fetching, pulling requests, merging, rebasing basics), learned systematic approach to resolve merge conflicts while preserving all contributions, understood the critical importance of code reviews and peer feedback, learned to troubleshoot GitHub permissions and invitation workflows, developed patience for debugging organizational system restrictions.
+What I Learned: Mastered advanced Git commands (branching, committing, pushing, fetching, pulling requests, merging, rebasing basics), learned systematic approach to resolve merge conflicts while preserving all contributions, understood the critical importance of code reviews and peer feedback, learned to troubleshoot GitHub permissions and invitation workflows.
 
 
 ### Vitalii Kozak (@kozak1715)
